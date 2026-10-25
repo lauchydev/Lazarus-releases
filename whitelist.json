@@ -1,4 +1,11 @@
 {
   "_about": "Who may use Lazarus. Add {\"name\": \"PlayerName\"} or {\"uuid\": \"...\"} (a UUID can't be dodged by renaming). This is the live list. Edits here reach every copy at its next start. An empty list lets everyone in.",
-  "players": []
+  "players": [
+    {
+      "uuid": "b763f0ce-307a-4b71-ac99-ef37fd5c31c1"
+    },
+    {
+      "uuid": "79bbf9fd-de92-4807-97cc-6cdf5cb69680"
+    }
+  ]
 }
