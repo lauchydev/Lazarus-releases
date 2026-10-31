@@ -1,0 +1,27 @@
+{
+	"required": true,
+	"package": "dev.lauchy.lazarus.mixin",
+	"compatibilityLevel": "JAVA_25",
+	"client": [
+		"ClientPacketListenerMixin",
+		"GuiMixin",
+		"LightmapMixin",
+		"ParticleEngineMixin",
+		"ChatGradientMixin",
+		"TabGradientMixin",
+		"TabBadgeMixin",
+		"NameTagBadgeMixin",
+		"StaffTagMixin",
+		"AbstractContainerScreenMixin",
+		"LocalPlayerMixin",
+		"LivingEntityRendererMixin",
+		"AbstractClientPlayerMixin",
+		"SlotAccessor",
+		"ContainerLabelsAccessor",
+		"ScreenBackgroundMixin",
+		"ContainerScreenMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

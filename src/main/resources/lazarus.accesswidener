@@ -1,0 +1,18 @@
+accessWidener	v2	official
+
+# Damage Numbers rewrites or hides a text_display on this client only.
+accessible	field	net/minecraft/world/entity/Display$TextDisplay	DATA_TEXT_ID	Lnet/minecraft/network/syncher/EntityDataAccessor;
+accessible	field	net/minecraft/world/entity/Display	DATA_VIEW_RANGE_ID	Lnet/minecraft/network/syncher/EntityDataAccessor;
+
+# Chat stacking replaces the newest line in place; Copy Chat finds the row under the mouse.
+accessible	field	net/minecraft/client/gui/components/ChatComponent	allMessages	Ljava/util/List;
+accessible	method	net/minecraft/client/gui/components/ChatComponent	refreshTrimmedMessages	()V
+accessible	field	net/minecraft/client/gui/components/ChatComponent	trimmedMessages	Ljava/util/List;
+accessible	field	net/minecraft/client/gui/components/ChatComponent	chatScrollbarPos	I
+
+# Slot overlays (Slot Lock, Storage Preview, Recipes) need where the window and its slots sit.
+accessible	field	net/minecraft/client/gui/screens/inventory/AbstractContainerScreen	leftPos	I
+accessible	field	net/minecraft/client/gui/screens/inventory/AbstractContainerScreen	topPos	I
+accessible	field	net/minecraft/client/gui/screens/inventory/AbstractContainerScreen	imageWidth	I
+accessible	field	net/minecraft/client/gui/screens/inventory/AbstractContainerScreen	imageHeight	I
+accessible	field	net/minecraft/client/gui/screens/inventory/AbstractContainerScreen	hoveredSlot	Lnet/minecraft/world/inventory/Slot;
