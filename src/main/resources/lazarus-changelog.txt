@@ -1,0 +1,5 @@
+# What's new in this version, shown by /lazarus changelog. One line per change, "Feature: one sentence".
+# Lines starting with "+" are new, "*" improved, "-" fixed; the command groups them in that order.
++ Profile Viewer: Hovering the networth in /l lists the items Lazarus couldn't price.
+* Missing Accessories: Also shows in /craft, recipe card and all.
+- Prices: Baby Skins and Shimmer Skins are priced for the armour set they go on; every one shared a single price.

@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "lazarus",
+  "version": "${version}",
+  "name": "Lazarus",
+  "description": "Quality of life, trackers and dungeon helpers for the Dragon Simulator server (dragsim.co).",
+  "authors": ["lauchydev"],
+  "contact": {
+    "sources": "https://github.com/lauchydev/Lazarus-releases",
+    "issues": "https://github.com/lauchydev/Lazarus-releases/issues"
+  },
+  "license": "LicenseRef-All-Rights-Reserved",
+  "custom": {
+    "lazarus:build": "${build}"
+  },
+  "environment": "client",
+  "accessWidener": "lazarus.accesswidener",
+  "entrypoints": {
+    "client": ["dev.lauchy.lazarus.Lazarus"]
+  },
+  "mixins": [
+    { "config": "lazarus.mixins.json", "environment": "client" }
+  ],
+  "depends": {
+    "fabricloader": ">=0.19.1",
+    "minecraft": "~26.1.2",
+    "java": ">=25",
+    "fabric-api": ">=0.155.0"
+  }
+}

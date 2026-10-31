@@ -1,0 +1,134 @@
+plugins {
+	id 'net.fabricmc.fabric-loom' version "${loom_version}"
+}
+
+// mod_version is major.minor.hotfix, bumped by hand: minor for a batch of features, hotfix
+// for fixes. CI passes -Pbuild_number=<run number>, which orders releases for the updater.
+// Local builds are 0, which every published build counts as newer than.
+def buildNumber = (project.findProperty("build_number") ?: "0").toString()
+
+version = project.mod_version
+group = project.maven_group
+
+base {
+	archivesName = project.archives_base_name
+}
+
+repositories {
+	mavenCentral()
+	maven { url = "https://repo.nea.moe/releases" } // libautoupdate
+}
+
+loom {
+	accessWidenerPath = file("src/main/resources/lazarus.accesswidener")
+}
+
+dependencies {
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+
+	// /lazarus update. Minecraft already ships Gson, so only the library itself goes in the jar.
+	implementation("moe.nea:libautoupdate:${project.libautoupdate_version}") { exclude group: "com.google.code.gson" }
+	include("moe.nea:libautoupdate:${project.libautoupdate_version}") { transitive = false }
+
+	testImplementation platform("org.junit:junit-bom:5.13.4")
+	testImplementation "org.junit.jupiter:junit-jupiter"
+	testRuntimeOnly "org.junit.platform:junit-platform-launcher"
+}
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(25)
+	}
+}
+
+tasks.withType(JavaCompile).configureEach {
+	options.release = 25
+	options.encoding = "UTF-8"
+	// Published builds (CI passes a build number) are compiled with no debug info: no line
+	// numbers, local-variable names or source-file names, so a decompile of the released jar
+	// is far harder to read. Dev builds (number 0) keep it so crashes stay debuggable.
+	if (buildNumber != "0") {
+		options.debug = false
+	}
+}
+
+processResources {
+	inputs.property "version", project.version
+	inputs.property "build", buildNumber
+	filesMatching("fabric.mod.json") {
+		expand "version": project.version, "build": buildNumber
+	}
+}
+
+test {
+	useJUnitPlatform()
+}
+
+// --- Lightweight obfuscation (opt-in; artifact only, never on the auto-release yet) --------
+// A rename-only ProGuard pass over the remapped jar, run by `./gradlew proguardJar`. The
+// dependency sits in its own configuration so a normal `build` never resolves it: only the
+// proguardJar task pulls ProGuard in, so a bad version or a Java-version mismatch can fail
+// this task without touching the real build or release.
+configurations {
+	proguard
+}
+
+dependencies {
+	proguard "com.guardsquare:proguard-base:7.10.0"
+}
+
+tasks.register("proguardJar", JavaExec) {
+	group = "build"
+	description = "Rename-only ProGuard pass over the remapped jar (outputs *-obf.jar)."
+	// assemble produces the remapped production jar (Loom wires its remap task into it);
+	// depending on it by the lifecycle name avoids referencing Loom's internal task directly.
+	dependsOn "assemble"
+	classpath = configurations.proguard
+	mainClass = "proguard.ProGuard"
+
+	def outJar = layout.buildDirectory.file("libs/${project.archives_base_name}-${project.version}-obf.jar")
+	def cfgFile = layout.buildDirectory.file("proguard/config.pro")
+	outputs.file(outJar)
+
+	doFirst {
+		// The remapped production jar: build/libs/<base>-<version>.jar.
+		def inJar = layout.buildDirectory.file("libs/${project.archives_base_name}-${project.version}.jar").get().asFile
+		def cfg = cfgFile.get().asFile
+		cfg.parentFile.mkdirs()
+		def sb = new StringBuilder()
+		sb << "-injars '${inJar}'\n"
+		sb << "-outjars '${outJar.get().asFile}'\n"
+		// The JDK's module files as library classes, plus everything on the compile classpath
+		// (Minecraft, Fabric loader and API, libautoupdate). Missing refs are ignored by the rules.
+		// JAVA_HOME (the full JDK) first, since the Gradle daemon's java.home can lack jmods; the
+		// line is skipped if neither has them, and -dontwarn/-ignorewarnings covers the gap.
+		def javaHome = System.getenv("JAVA_HOME") ?: System.getProperty("java.home")
+		def jmods = file("${javaHome}/jmods")
+		if (!jmods.isDirectory()) jmods = file("${System.getProperty("java.home")}/jmods")
+		if (jmods.isDirectory()) sb << "-libraryjars '${jmods}'(**.jmod)\n"
+		configurations.compileClasspath.resolve().each { sb << "-libraryjars '${it}'\n" }
+		sb << file("proguard-rules.pro").text
+		cfg.text = sb.toString()
+		args = ["@${cfg}"]
+	}
+}
+
+jar {
+	from("LICENSE") {
+		rename { "${it}_${project.archives_base_name}" }
+	}
+}
+
+// Client game tests boot the real game headless in CI: every mixin applies, a world
+// loads, and each Lazarus screen renders once, so a broken hook fails the build here.
+fabricApi {
+	configureTests {
+		createSourceSet = true
+		modId = "lazarus-gametest"
+		enableGameTests = false
+		enableClientGameTests = true
+		eula = true
+	}
+}
