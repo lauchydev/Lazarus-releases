@@ -1,0 +1,1334 @@
+{
+	"fitted": "2026-10-29",
+	"sales": 142,
+	"items": 28,
+	"share": {
+		"hot_potato_books": 0.536,
+		"golden_hot_potato_books": 1.13,
+		"recombobulator": 0.861,
+		"reforge": 0.071,
+		"stars": 0.413
+	},
+	"support": {
+		"hot_potato_books": 40,
+		"fuming_potato_books": 2,
+		"golden_hot_potato_books": 9,
+		"recombobulator": 33,
+		"reforge": 54,
+		"dye": 0,
+		"item_skin": 1,
+		"pet_skin": 0,
+		"art_of_war": 0,
+		"wither_scrolls": 0,
+		"enrichment": 0,
+		"rune": 0,
+		"drill_parts": 1,
+		"coating": 0,
+		"stars": 21
+	},
+	"errors": {
+		"median of all sales (dragsim.co's price)": {
+			"sales": 56,
+			"medianError": 0.383,
+			"meanError": 0.824
+		},
+		"clean price + upgrades at full price": {
+			"sales": 56,
+			"medianError": 0.191,
+			"meanError": 0.655
+		},
+		"fitted": {
+			"sales": 56,
+			"medianError": 0.23,
+			"meanError": 0.415
+		}
+	},
+	"recipes": {
+		"amethyst_boots": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"fine_amethyst": 32,
+				"crying_boots": 1
+			}
+		},
+		"amethyst_chestplate": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"fine_amethyst": 64,
+				"crying_chestplate": 1
+			}
+		},
+		"amethyst_gauntlet": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"fine_amethyst": 8,
+				"refined_obsidian": 16
+			}
+		},
+		"amethyst_helmet": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"fine_amethyst": 40,
+				"crying_helmet": 1
+			}
+		},
+		"amethyst_leggings": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"fine_amethyst": 56,
+				"crying_leggings": 1
+			}
+		},
+		"amethyst_mixture": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"flawed_amethyst": 16,
+				"enchanted_obsidian": 32
+			}
+		},
+		"arcane_artifact": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"arcane_fragment": 100,
+				"ancestral_scale": 7,
+				"arcane_heart": 2,
+				"arcane_ring": 1
+			}
+		},
+		"arcane_dragon_boots": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"arcane_fragment": 48
+			}
+		},
+		"arcane_dragon_chestplate": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"arcane_fragment": 96
+			}
+		},
+		"arcane_dragon_helmet": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"arcane_fragment": 60
+			}
+		},
+		"arcane_dragon_leggings": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"arcane_fragment": 84
+			}
+		},
+		"arcane_ring": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"arcane_fragment": 48,
+				"ancestral_scale": 5,
+				"arcane_heart": 2,
+				"arcane_talisman": 1
+			}
+		},
+		"atomsplit_katana": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"null_ovoid": 144,
+				"null_atom": 32,
+				"vorpal_katana": 1
+			}
+		},
+		"axe_of_the_shredded": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"revenant_viscera": 128,
+				"shard_of_the_shredded": 4,
+				"reaper_falchion": 1
+			}
+		},
+		"bejeweled_handle": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"enchanted_obsidian": 4
+			}
+		},
+		"berserk_artifact": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"berserk_fragment": 100,
+				"ancestral_scale": 7,
+				"berserk_fang": 2,
+				"berserk_ring": 1
+			}
+		},
+		"berserk_dragon_boots": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"berserk_fragment": 48
+			}
+		},
+		"berserk_dragon_chestplate": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"berserk_fragment": 96
+			}
+		},
+		"berserk_dragon_leggings": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"berserk_fragment": 84
+			}
+		},
+		"berserk_ring": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"berserk_fragment": 48,
+				"ancestral_scale": 5,
+				"berserk_fang": 2,
+				"berserk_talisman": 1
+			}
+		},
+		"big_loan": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"scythe_blade": 1,
+				"shard_of_the_shredded": 1,
+				"judgement_core": 1,
+				"high_class_archfiend_dice": 1,
+				"small_loan": 1
+			}
+		},
+		"blinding_sword": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"golden_droplet": 6,
+				"mysterious_handle": 1
+			}
+		},
+		"bonemerang": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"flesh_fang": 3
+			}
+		},
+		"bouquet_of_lies": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"endstone_rose_bush": 4,
+				"rose_of_lies": 2,
+				"flower_of_truth": 1
+			}
+		},
+		"chaotic_artifact": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"chaotic_fragment": 100,
+				"ancestral_scale": 7,
+				"chaotic_stinger": 2,
+				"chaotic_ring": 1
+			}
+		},
+		"chaotic_dragon_boots": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"chaotic_fragment": 48
+			}
+		},
+		"chaotic_dragon_chestplate": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"chaotic_fragment": 96
+			}
+		},
+		"chaotic_dragon_helmet": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"chaotic_fragment": 60
+			}
+		},
+		"chaotic_dragon_leggings": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"chaotic_fragment": 84
+			}
+		},
+		"chaotic_ring": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"chaotic_fragment": 48,
+				"ancestral_scale": 5,
+				"chaotic_stinger": 2,
+				"chaotic_talisman": 1
+			}
+		},
+		"chaotic_talisman": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"chaotic_fragment": 48
+			}
+		},
+		"crying_drill_cd_12": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"drill_motor": 1,
+				"fuel_tank": 1,
+				"flawed_amethyst": 24,
+				"amethyst_mixture": 6,
+				"fine_amethyst": 1,
+				"refined_crying_obsidian": 5
+			}
+		},
+		"crying_obsidian_pickaxe": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"refined_obsidian_pickaxe": 1,
+				"refined_crying_obsidian": 2,
+				"flawed_amethyst": 8
+			}
+		},
+		"crystal_boots": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"crystal_frag": 40
+			}
+		},
+		"crystal_chestplate": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"crystal_frag": 80
+			}
+		},
+		"crystal_helmet": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"crystal_frag": 50
+			}
+		},
+		"crystal_leggings": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"crystal_frag": 70
+			}
+		},
+		"draconic_artifact": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"golden_droplet": 1,
+				"draconic_ring": 1
+			}
+		},
+		"drill_motor": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"refined_end_stone": 4,
+				"refined_obsidian": 2,
+				"null_ovoid": 8
+			}
+		},
+		"edible_mace": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"frozen_frag": 50
+			}
+		},
+		"ender_relic": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"null_atom": 32,
+				"ender_artifact": 1
+			}
+		},
+		"ender_talisman": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"null_ovoid": 128
+			}
+		},
+		"enderite_drill_ex_226": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"refined_end_stone": 3,
+				"drill_motor": 1,
+				"fuel_tank": 1
+			}
+		},
+		"enderite_drill_ex_326": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"enderite_drill_ex_226": 1,
+				"void_plate": 5,
+				"obsidian_plate": 1
+			}
+		},
+		"enderite_pickaxe": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"refined_end_stone": 3,
+				"bejeweled_handle": 2
+			}
+		},
+		"fb_helmet": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"frozen_frag": 50
+			}
+		},
+		"final_destination_boots": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"null_ovoid": 64
+			}
+		},
+		"final_destination_chestplate": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"null_ovoid": 128
+			}
+		},
+		"final_destination_helmet": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"null_ovoid": 80
+			}
+		},
+		"final_destination_leggings": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"null_ovoid": 112
+			}
+		},
+		"fleshrend_dagger": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"axe_of_the_shredded": 1,
+				"flesh_fang": 1,
+				"revenant_viscera": 128,
+				"null_atom": 16
+			}
+		},
+		"frozen_scythe": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"frozen_frag": 100
+			}
+		},
+		"frozen_urn": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"frozen_frag": 35
+			}
+		},
+		"giants_sword": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"giants_core": 1,
+				"endstone_rose_bush": 3,
+				"livid_dagger": 1
+			}
+		},
+		"gilded_ring": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"midas_jewel": 8,
+				"golden_hot_potato_book": 1
+			}
+		},
+		"glacial_scythe": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"golden_droplet": 4,
+				"frozen_core": 1,
+				"golden_frag": 192,
+				"frozen_scythe": 1
+			}
+		},
+		"gold_claws": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"pet_item_iron_claws_rare": 5
+			}
+		},
+		"golden_sceptre": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"golden_droplet": 3,
+				"mysterious_handle": 2
+			}
+		},
+		"high_greed": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"scythe_blade": 1,
+				"pet_item_tier_boost": 1,
+				"void_upgrade_stone": 1,
+				"average_greed": 1
+			}
+		},
+		"hyperion": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"maxor_wand": 6,
+				"frozen_frag": 64,
+				"frozen_core": 2,
+				"necron_blade": 1
+			}
+		},
+		"maxor_boots": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"maxor_wand": 2,
+				"fb_boots": 1
+			}
+		},
+		"maxor_chestplate": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"maxor_wand": 2,
+				"fb_chestplate": 1
+			}
+		},
+		"maxor_helmet": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"maxor_wand": 2,
+				"fb_helmet": 1
+			}
+		},
+		"maxor_leggings": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"maxor_wand": 2,
+				"fb_leggings": 1
+			}
+		},
+		"maxors_boots": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"maxors_wand": 2,
+				"fb_boots": 1
+			}
+		},
+		"maxors_chestplate": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"maxors_wand": 2,
+				"fb_chestplate": 1
+			}
+		},
+		"maxors_helmet": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"maxors_wand": 2,
+				"fb_helmet": 1
+			}
+		},
+		"maxors_leggings": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"maxors_wand": 2,
+				"fb_leggings": 1
+			}
+		},
+		"midas_staff": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"golden_droplet": 6,
+				"mysterious_handle": 3
+			}
+		},
+		"necron_blade": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"rift_goo": 64,
+				"corrupted_core": 1,
+				"necron_handle": 1
+			}
+		},
+		"necron_boots": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"necron_aegis": 2,
+				"fb_boots": 1
+			}
+		},
+		"necron_chestplate": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"necron_aegis": 2,
+				"fb_chestplate": 1
+			}
+		},
+		"necron_leggings": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"necron_aegis": 2,
+				"fb_leggings": 1
+			}
+		},
+		"obsidian_drill_od_355": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"void_plate": 6,
+				"refined_obsidian": 8,
+				"drill_motor": 1,
+				"refined_end_stone": 8,
+				"fuel_tank": 1
+			}
+		},
+		"obsidian_drill_od_455": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"obsidian_drill_od_355": 1,
+				"fine_amethyst": 4,
+				"refined_obsidian": 12,
+				"obsidian_plate": 5
+			}
+		},
+		"obsidian_drill_od_555": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"obsidian_drill_od_455": 1,
+				"fine_amethyst": 8,
+				"refined_obsidian": 16,
+				"obsidian_plate": 10,
+				"refined_crying_obsidian": 8
+			}
+		},
+		"obsidian_drill_od_655": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"obsidian_drill_od_555": 1,
+				"flawless_amethyst": 1,
+				"amethyst_mixture": 16,
+				"null_atom": 30,
+				"obsidian_plate": 10,
+				"refined_obsidian": 12
+			}
+		},
+		"obsidian_miner_boots": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"refined_obsidian": 4,
+				"enderite_boots": 1
+			}
+		},
+		"obsidian_miner_chestplate": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"refined_obsidian": 8,
+				"enderite_chestplate": 1
+			}
+		},
+		"obsidian_miner_helmet": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"refined_obsidian": 5,
+				"enderite_helmet": 1
+			}
+		},
+		"obsidian_miner_leggings": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"refined_obsidian": 7,
+				"enderite_leggings": 1
+			}
+		},
+		"obsidian_pickaxe": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"refined_obsidian": 3,
+				"bejeweled_handle": 2
+			}
+		},
+		"obsidian_plate": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"refined_obsidian": 5,
+				"void_plate": 1,
+				"refined_crying_obsidian": 1
+			}
+		},
+		"obsidian_plated_engine": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"end_plated_engine": 1,
+				"refined_obsidian": 8,
+				"drill_motor": 2
+			}
+		},
+		"old_dragon_chestplate": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"old_fragment": 80
+			}
+		},
+		"old_dragon_leggings": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"old_fragment": 70
+			}
+		},
+		"ooze_scepter": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"gelatinous_membrane": 16,
+				"gelatinous_glob": 4,
+				"corrupted_core": 1,
+				"rift_goo": 64
+			}
+		},
+		"oozeplate_boots": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"gelatinous_membrane": 8
+			}
+		},
+		"oozeplate_chestplate": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"gelatinous_membrane": 16
+			}
+		},
+		"oozeplate_helmet": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"gelatinous_membrane": 10
+			}
+		},
+		"oozeplate_leggings": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"gelatinous_membrane": 14
+			}
+		},
+		"prospectors_boots": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"enchanted_end_stone": 16
+			}
+		},
+		"prospectors_chestplate": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"enchanted_end_stone": 32
+			}
+		},
+		"prospectors_helmet": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"enchanted_end_stone": 20
+			}
+		},
+		"prospectors_leggings": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"enchanted_end_stone": 28
+			}
+		},
+		"protector_dragon_chestplate": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"protector_fragment": 80
+			}
+		},
+		"protector_dragon_leggings": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"protector_fragment": 70
+			}
+		},
+		"protectors_shield": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"giants_core": 1,
+				"defender_talisman": 1
+			}
+		},
+		"reaper_boots": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"revenant_viscera": 128,
+				"revenant_boots": 1
+			}
+		},
+		"reaper_chestplate": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"revenant_viscera": 128,
+				"revenant_chestplate": 1
+			}
+		},
+		"reaper_falchion": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"revived_heart": 1,
+				"revenant_catalyst": 1,
+				"revenant_falchion": 1
+			}
+		},
+		"reaper_leggings": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"revenant_viscera": 128,
+				"revenant_leggings": 1
+			}
+		},
+		"reaper_mask": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"revenant_viscera": 64,
+				"revived_heart": 1,
+				"beheaded_horror": 1
+			}
+		},
+		"reaper_orb": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"scythe_blade": 6,
+				"shard_of_the_shredded": 1
+			}
+		},
+		"reaper_scythe": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"scythe_blade": 2,
+				"revenant_viscera": 64,
+				"reaper_falchion": 1
+			}
+		},
+		"refined_enderite_pickaxe": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"enderite_pickaxe": 1,
+				"refined_end_stone": 2
+			}
+		},
+		"refined_obsidian_pickaxe": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"obsidian_pickaxe": 1,
+				"refined_obsidian": 1
+			}
+		},
+		"reinforced_scales": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"pet_item_hardened_scales_uncommon": 5
+			}
+		},
+		"revenant_artifact": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"revenant_viscera": 256,
+				"endstone_rose": 16,
+				"beheaded_horror": 16,
+				"revenant_ring": 1
+			}
+		},
+		"revived_heart": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"zombie_heart": 8,
+				"crystallized_heart": 1
+			}
+		},
+		"riftrender_katana": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"seraph_plating": 16,
+				"void_fang": 4,
+				"riftstring": 4,
+				"atomsplit_katana": 1,
+				"flesh_fang": 4
+			}
+		},
+		"riftwalker_boots": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"final_destination_boots": 1,
+				"seraph_plating": 2,
+				"null_atom": 12
+			}
+		},
+		"riftwalker_chestplate": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"final_destination_chestplate": 1,
+				"seraph_plating": 5,
+				"null_atom": 24
+			}
+		},
+		"riftwalker_helmet": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"final_destination_helmet": 1,
+				"seraph_plating": 3,
+				"null_atom": 16
+			}
+		},
+		"riftwalker_leggings": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"final_destination_leggings": 1,
+				"seraph_plating": 4,
+				"null_atom": 20
+			}
+		},
+		"rose_artifact": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"endstone_rose_bush": 8,
+				"rose_ring": 1
+			}
+		},
+		"rose_relic": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"tier_boost_core": 4,
+				"endstone_rose_bush": 8,
+				"rose_artifact": 1
+			}
+		},
+		"scylla": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"maxors_wand": 6,
+				"void_upgrade_stone": 2,
+				"judgement_core": 2,
+				"necron_blade": 1
+			}
+		},
+		"small_loan": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"null_atom": 64,
+				"etherwarp_conduit": 2,
+				"transmission_tuner": 2,
+				"spare_change_talisman": 1
+			}
+		},
+		"sorrow_boots": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"lament": 1,
+				"golden_droplet": 2,
+				"superior_dragon_boots": 1,
+				"endstone_rose_bush": 8
+			}
+		},
+		"sorrow_chestplate": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"lament": 1,
+				"golden_droplet": 2,
+				"superior_dragon_chestplate": 1,
+				"endstone_rose_bush": 8
+			}
+		},
+		"sorrow_helmet": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"lament": 1,
+				"golden_droplet": 2,
+				"superior_dragon_helmet": 1,
+				"endstone_rose_bush": 8
+			}
+		},
+		"sorrow_leggings": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"lament": 1,
+				"golden_droplet": 2,
+				"superior_dragon_leggings": 1,
+				"endstone_rose_bush": 8
+			}
+		},
+		"soulflow_battery": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"null_ovoid": 36,
+				"soulflow_pile": 1
+			}
+		},
+		"soulflow_supercell": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"null_atom": 16,
+				"soulflow_battery": 1
+			}
+		},
+		"strong_dragon_boots": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"strong_fragment": 40
+			}
+		},
+		"strong_dragon_helmet": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"strong_fragment": 50
+			}
+		},
+		"strong_dragon_leggings": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"strong_fragment": 70
+			}
+		},
+		"superior_dragon_helmet": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"superior_fragment": 50
+			}
+		},
+		"superior_dragon_leggings": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"superior_fragment": 70
+			}
+		},
+		"unstable_dragon_chestplate": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"unstable_fragment": 80
+			}
+		},
+		"unstable_dragon_leggings": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"unstable_fragment": 70
+			}
+		},
+		"void_boots": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"void_fragment": 4,
+				"fine_amethyst": 8
+			}
+		},
+		"void_canister": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"enchanted_end_stone": 128,
+				"null_ovoid": 1
+			}
+		},
+		"void_cell": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"void_canister": 5,
+				"enchanted_crying_obsidian": 3
+			}
+		},
+		"void_chestplate": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"void_fragment": 12,
+				"fine_amethyst": 8
+			}
+		},
+		"void_drill": {
+			"makes": 1,
+			"fee": 5000000000,
+			"parts": {
+				"obsidian_drill_od_655": 1,
+				"void_alloy": 1
+			}
+		},
+		"void_helmet": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"void_fragment": 6,
+				"fine_amethyst": 8
+			}
+		},
+		"void_leggings": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"void_fragment": 6,
+				"fine_amethyst": 8
+			}
+		},
+		"void_plate": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"refined_end_stone": 2,
+				"refined_obsidian": 1,
+				"flawed_amethyst": 5
+			}
+		},
+		"void_relic": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"void_upgrade_stone": 1,
+				"void_artifact": 1
+			}
+		},
+		"void_ring": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"null_atom": 32,
+				"void_talisman": 1
+			}
+		},
+		"void_shard": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"fine_amethyst": 1,
+				"refined_end_stone": 1,
+				"refined_obsidian": 2
+			}
+		},
+		"voidfang_dagger": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"atomsplit_katana": 1,
+				"void_fang": 1,
+				"null_ovoid": 128,
+				"null_atom": 16
+			}
+		},
+		"voodoo_doll": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"frozen_frag": 50
+			}
+		},
+		"wand_of_atonement": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"revenant_catalyst": 1,
+				"revenant_viscera": 64,
+				"wand_of_restoration": 1
+			}
+		},
+		"wardens_blade": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"warden_core": 1,
+				"defender_talisman": 1
+			}
+		},
+		"wilted_rose_artifact": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"rose_of_lies": 16,
+				"wilted_rose_ring": 1
+			}
+		},
+		"wise_dragon_boots": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"wise_fragment": 40
+			}
+		},
+		"wise_dragon_chestplate": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"wise_fragment": 80
+			}
+		},
+		"wise_dragon_helmet": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"wise_fragment": 50
+			}
+		},
+		"wise_dragon_leggings": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"wise_fragment": 70
+			}
+		},
+		"young_dragon_chestplate": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"young_fragment": 80
+			}
+		},
+		"young_dragon_leggings": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"young_fragment": 70
+			}
+		},
+		"zealot_artifact": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"golden_eye": 7,
+				"infinieye": 1,
+				"zealot_ring": 1
+			}
+		},
+		"zealot_ring": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"summoning_eye": 112,
+				"golden_eye": 1,
+				"zealot_talisman": 1
+			}
+		},
+		"zombie_relic": {
+			"makes": 1,
+			"fee": 0,
+			"parts": {
+				"revenant_viscera": 448,
+				"shard_of_the_shredded": 1,
+				"zombie_artifact": 1
+			}
+		}
+	}
+}

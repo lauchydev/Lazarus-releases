@@ -1,0 +1,13 @@
+# What's new in this version, shown by /lazarus changelog. One line per change, "Feature: one sentence".
+# Lines starting with "+" are new, "*" improved, "-" fixed; the command groups them in that order.
++ Drop Alerts: Never Alert For lists items that never alert or pop up, whatever they're worth or however they're announced.
++ Staff Desk: A flagged player's card sums up what the anticheat caught them on in the last hour, check by check.
++ Staff Desk: A filter beside the search shows only players flagged for what you tick (report, alt, captcha…) or of the ranks you tick.
++ Staff Status: A small panel shows whether you're vanished, your nick, your chat channel and how many staff, flagged players and reports there are.
+* Pet Binds: Each bind picks its own pet slot, so J can summon the pet in slot 4.
+* Wardrobe Binds: Each bind picks its own wardrobe slot, so J can put on slot 4.
+* Anticheat Lines: The anticheat's review-only detections leave chat and join the player's summary on the desk.
+- Drop Alerts: The pop-up shows the item for pets, and for drops that reach your inventory a moment after their chat line.
+- Wardrobe Binds: A bind waits for the wardrobe's one second before swapping, instead of being told to wait.
+- Binds: Starting the game no longer adds another empty command, pet or wardrobe bind each time.
+- Pet Binds: The pet menu closes after the pet comes out.
