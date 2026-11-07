@@ -1,0 +1,1472 @@
+{
+	"now": 1793520000000,
+	"cases": [
+		{
+			"name": "the bazaar prices a clean item",
+			"known": {
+				"prices": {
+					"enchanted_diamond": {
+						"bazaar": 5000000,
+						"auction": -1,
+						"sales": 0,
+						"days": 7,
+						"clean": -1,
+						"thin": -1,
+						"listed": -1,
+						"at": 1793516400000,
+						"by": "a"
+					}
+				}
+			},
+			"item": {
+				"entry": "enchanted_diamond",
+				"item_modifiers": {},
+				"extra": {},
+				"item_data": {}
+			},
+			"expect": {
+				"unit": 5000000,
+				"total": 5000000,
+				"source": "bazaar",
+				"confidence": "High",
+				"kind": "rebuild",
+				"past": 0,
+				"parts": []
+			}
+		},
+		{
+			"name": "a bazaar read older than two days is a step less sure",
+			"known": {
+				"prices": {
+					"enchanted_diamond": {
+						"bazaar": 5000000,
+						"auction": -1,
+						"sales": 0,
+						"days": 7,
+						"clean": -1,
+						"thin": -1,
+						"listed": -1,
+						"at": 1793088000000,
+						"by": "a"
+					}
+				}
+			},
+			"item": {
+				"entry": "enchanted_diamond",
+				"item_modifiers": {},
+				"extra": {},
+				"item_data": {}
+			},
+			"expect": {
+				"unit": 5000000,
+				"total": 5000000,
+				"source": "bazaar",
+				"confidence": "Medium",
+				"kind": "rebuild",
+				"past": 0,
+				"parts": []
+			}
+		},
+		{
+			"name": "the newest reads say the most",
+			"known": {
+				"prices": {
+					"warden_core": {
+						"reads": [
+							{
+								"bazaar": -1,
+								"auction": -1,
+								"sales": 5,
+								"days": 7,
+								"clean": 1000000000,
+								"thin": -1,
+								"listed": -1,
+								"at": 1793001600000,
+								"by": "a"
+							},
+							{
+								"bazaar": -1,
+								"auction": -1,
+								"sales": 4,
+								"days": 7,
+								"clean": 2000000000,
+								"thin": -1,
+								"listed": -1,
+								"at": 1793516400000,
+								"by": "b"
+							}
+						],
+						"at": 1793516400000
+					}
+				}
+			},
+			"item": {
+				"entry": "warden_core",
+				"item_modifiers": {},
+				"extra": {},
+				"item_data": {}
+			},
+			"expect": {
+				"unit": 2000000000,
+				"total": 2000000000,
+				"source": "5 sales",
+				"confidence": "High",
+				"kind": "rebuild",
+				"past": 0,
+				"parts": []
+			}
+		},
+		{
+			"name": "a read ten times off is held back while nothing agrees",
+			"known": {
+				"prices": {
+					"warden_core": {
+						"reads": [
+							{
+								"bazaar": -1,
+								"auction": -1,
+								"sales": 5,
+								"days": 7,
+								"clean": 1000000000,
+								"thin": -1,
+								"listed": -1,
+								"at": 1793516400000,
+								"by": "a"
+							}
+						],
+						"pending": [
+							{
+								"bazaar": -1,
+								"auction": -1,
+								"sales": 3,
+								"days": 7,
+								"clean": 50000000000,
+								"thin": -1,
+								"listed": -1,
+								"at": 1793516400000,
+								"by": "b"
+							}
+						],
+						"at": 1793516400000
+					}
+				}
+			},
+			"item": {
+				"entry": "warden_core",
+				"item_modifiers": {},
+				"extra": {},
+				"item_data": {}
+			},
+			"expect": {
+				"unit": 1000000000,
+				"total": 1000000000,
+				"source": "5 sales",
+				"confidence": "High",
+				"kind": "rebuild",
+				"past": 0,
+				"parts": []
+			}
+		},
+		{
+			"name": "a held-back read counts once a day passes with nothing saying otherwise",
+			"known": {
+				"prices": {
+					"warden_core": {
+						"reads": [
+							{
+								"bazaar": -1,
+								"auction": -1,
+								"sales": 5,
+								"days": 7,
+								"clean": 1000000000,
+								"thin": -1,
+								"listed": -1,
+								"at": 1793412000000,
+								"by": "a"
+							}
+						],
+						"pending": [
+							{
+								"bazaar": -1,
+								"auction": -1,
+								"sales": 3,
+								"days": 7,
+								"clean": 50000000000,
+								"thin": -1,
+								"listed": -1,
+								"at": 1793430000000,
+								"by": "b"
+							}
+						],
+						"at": 1793430000000
+					}
+				}
+			},
+			"item": {
+				"entry": "warden_core",
+				"item_modifiers": {},
+				"extra": {},
+				"item_data": {}
+			},
+			"expect": {
+				"unit": 50000000000,
+				"total": 50000000000,
+				"source": "5 sales",
+				"confidence": "High",
+				"kind": "rebuild",
+				"past": 0,
+				"parts": []
+			}
+		},
+		{
+			"name": "a held-back read counts when dragsim.co's own price agrees",
+			"known": {
+				"siteBase": {
+					"warden_core": 40000000000
+				},
+				"prices": {
+					"warden_core": {
+						"reads": [
+							{
+								"bazaar": -1,
+								"auction": -1,
+								"sales": 5,
+								"days": 7,
+								"clean": 1000000000,
+								"thin": -1,
+								"listed": -1,
+								"at": 1793512800000,
+								"by": "a"
+							}
+						],
+						"pending": [
+							{
+								"bazaar": -1,
+								"auction": -1,
+								"sales": 3,
+								"days": 7,
+								"clean": 50000000000,
+								"thin": -1,
+								"listed": -1,
+								"at": 1793516400000,
+								"by": "b"
+							}
+						],
+						"at": 1793516400000
+					}
+				}
+			},
+			"item": {
+				"entry": "warden_core",
+				"item_modifiers": {},
+				"extra": {},
+				"item_data": {}
+			},
+			"expect": {
+				"unit": 50000000000,
+				"total": 50000000000,
+				"source": "5 sales",
+				"confidence": "High",
+				"kind": "rebuild",
+				"past": 0,
+				"parts": []
+			}
+		},
+		{
+			"name": "a read from before 1.19.0 stands in as clean from three sales",
+			"known": {
+				"prices": {
+					"warden_core": {
+						"bazaar": -1,
+						"auction": 3000000000,
+						"sales": 4,
+						"days": 7,
+						"at": 1793516400000
+					}
+				}
+			},
+			"item": {
+				"entry": "warden_core",
+				"item_modifiers": {},
+				"extra": {},
+				"item_data": {}
+			},
+			"expect": {
+				"unit": 3000000000,
+				"total": 3000000000,
+				"source": "4 sales",
+				"confidence": "High",
+				"kind": "rebuild",
+				"past": 0,
+				"parts": []
+			}
+		},
+		{
+			"name": "trades from two pairs fill in but don't settle",
+			"known": {
+				"trades": {
+					"warden_core": {
+						"p": [
+							[
+								2000000000,
+								1793433600000,
+								"k1",
+								"p1"
+							],
+							[
+								3000000000,
+								1793433600000,
+								"k2",
+								"p2"
+							]
+						]
+					}
+				}
+			},
+			"item": {
+				"entry": "warden_core",
+				"item_modifiers": {},
+				"extra": {},
+				"item_data": {}
+			},
+			"expect": {
+				"unit": 2000000000,
+				"total": 2000000000,
+				"source": "2 trades",
+				"confidence": "Medium",
+				"kind": "rebuild",
+				"past": 0,
+				"parts": []
+			}
+		},
+		{
+			"name": "trades from three pairs settle",
+			"known": {
+				"trades": {
+					"warden_core": {
+						"p": [
+							[
+								2000000000,
+								1793433600000,
+								"k1",
+								"p1"
+							],
+							[
+								3000000000,
+								1793433600000,
+								"k2",
+								"p2"
+							],
+							[
+								4000000000,
+								1793433600000,
+								"k3",
+								"p3"
+							]
+						]
+					}
+				}
+			},
+			"item": {
+				"entry": "warden_core",
+				"item_modifiers": {},
+				"extra": {},
+				"item_data": {}
+			},
+			"expect": {
+				"unit": 3000000000,
+				"total": 3000000000,
+				"source": "3 trades",
+				"confidence": "High",
+				"kind": "rebuild",
+				"past": 0,
+				"parts": []
+			}
+		},
+		{
+			"name": "one pair trading again and again counts once",
+			"known": {
+				"trades": {
+					"warden_core": {
+						"p": [
+							[
+								2000000000,
+								1793433600000,
+								"k1",
+								"p1"
+							],
+							[
+								9000000000,
+								1793433600000,
+								"k2",
+								"p1"
+							],
+							[
+								9000000000,
+								1793433600000,
+								"k3",
+								"p1"
+							]
+						]
+					}
+				}
+			},
+			"item": {
+				"entry": "warden_core",
+				"item_modifiers": {},
+				"extra": {},
+				"item_data": {}
+			},
+			"expect": {
+				"unit": 9000000000,
+				"total": 9000000000,
+				"source": "1 trade",
+				"confidence": "Medium",
+				"kind": "rebuild",
+				"past": 0,
+				"parts": []
+			}
+		},
+		{
+			"name": "trades from older mods are one unknown pair",
+			"known": {
+				"trades": {
+					"warden_core": {
+						"p": [
+							[
+								2000000000,
+								1793433600000,
+								"k1"
+							],
+							[
+								3000000000,
+								1793433600000,
+								"k2"
+							],
+							[
+								4000000000,
+								1793433600000,
+								"k3"
+							]
+						]
+					}
+				}
+			},
+			"item": {
+				"entry": "warden_core",
+				"item_modifiers": {},
+				"extra": {},
+				"item_data": {}
+			},
+			"expect": {
+				"unit": 3000000000,
+				"total": 3000000000,
+				"source": "1 trade",
+				"confidence": "Medium",
+				"kind": "rebuild",
+				"past": 0,
+				"parts": []
+			}
+		},
+		{
+			"name": "trades below the recipe's parts are lifted to them unless settled",
+			"known": {
+				"prices": {
+					"fine_amethyst": {
+						"bazaar": 1000000,
+						"auction": -1,
+						"sales": 0,
+						"days": 7,
+						"clean": -1,
+						"thin": -1,
+						"listed": -1,
+						"at": 1793516400000,
+						"by": "a"
+					},
+					"crying_boots": {
+						"bazaar": -1,
+						"auction": -1,
+						"sales": 3,
+						"days": 7,
+						"clean": 50000000,
+						"thin": -1,
+						"listed": -1,
+						"at": 1793516400000,
+						"by": "a"
+					}
+				},
+				"trades": {
+					"amethyst_boots": {
+						"p": [
+							[
+								10000000,
+								1793433600000,
+								"k1",
+								"p1"
+							]
+						]
+					}
+				}
+			},
+			"item": {
+				"entry": "amethyst_boots",
+				"item_modifiers": {},
+				"extra": {},
+				"item_data": {}
+			},
+			"expect": {
+				"unit": 82000000,
+				"total": 82000000,
+				"source": "recipe parts",
+				"confidence": "Low",
+				"kind": "rebuild",
+				"past": 0,
+				"parts": []
+			}
+		},
+		{
+			"name": "a price the owner set stands below the recipe's parts",
+			"known": {
+				"prices": {
+					"fine_amethyst": {
+						"bazaar": 1000000,
+						"auction": -1,
+						"sales": 0,
+						"days": 7,
+						"clean": -1,
+						"thin": -1,
+						"listed": -1,
+						"at": 1793516400000,
+						"by": "a"
+					},
+					"crying_boots": {
+						"bazaar": -1,
+						"auction": -1,
+						"sales": 3,
+						"days": 7,
+						"clean": 50000000,
+						"thin": -1,
+						"listed": -1,
+						"at": 1793516400000,
+						"by": "a"
+					}
+				},
+				"manual": {
+					"amethyst_boots": {
+						"price": 20000000
+					}
+				}
+			},
+			"item": {
+				"entry": "amethyst_boots",
+				"item_modifiers": {},
+				"extra": {},
+				"item_data": {}
+			},
+			"expect": {
+				"unit": 20000000,
+				"total": 20000000,
+				"source": "set price",
+				"confidence": "Medium",
+				"kind": "rebuild",
+				"past": 0,
+				"parts": []
+			}
+		},
+		{
+			"name": "a forced price wins over the bazaar",
+			"known": {
+				"prices": {
+					"enchanted_diamond": {
+						"bazaar": 5000000,
+						"auction": -1,
+						"sales": 0,
+						"days": 7,
+						"clean": -1,
+						"thin": -1,
+						"listed": -1,
+						"at": 1793516400000,
+						"by": "a"
+					}
+				},
+				"manual": {
+					"enchanted_diamond": {
+						"price": 9000000,
+						"force": true
+					}
+				}
+			},
+			"item": {
+				"entry": "enchanted_diamond",
+				"item_modifiers": {},
+				"extra": {},
+				"item_data": {}
+			},
+			"expect": {
+				"unit": 9000000,
+				"total": 9000000,
+				"source": "set price",
+				"confidence": "High",
+				"kind": "rebuild",
+				"past": 0,
+				"parts": []
+			}
+		},
+		{
+			"name": "an upgraded item sells for what dragsim.co's sales of that exact item say",
+			"known": {
+				"prices": {
+					"glacial_scythe": {
+						"bazaar": -1,
+						"auction": -1,
+						"sales": 6,
+						"days": 7,
+						"clean": 8000000000,
+						"thin": -1,
+						"listed": -1,
+						"at": 1793516400000,
+						"by": "a"
+					},
+					"hot_potato_book": {
+						"bazaar": 5000000,
+						"auction": -1,
+						"sales": 0,
+						"days": 7,
+						"clean": -1,
+						"thin": -1,
+						"listed": -1,
+						"at": 1793516400000,
+						"by": "a"
+					}
+				}
+			},
+			"row": {
+				"item": {
+					"entry": "glacial_scythe",
+					"item_modifiers": {
+						"hot_potato_books": 10,
+						"recombobulated": true
+					},
+					"extra": {},
+					"item_data": {}
+				},
+				"quantity": 1,
+				"valuation": {
+					"price": 20000000000,
+					"source": "AH matched sold median",
+					"confidence": "High",
+					"samples": 5
+				}
+			},
+			"expect": {
+				"unit": 20000000000,
+				"total": 20000000000,
+				"source": "dragsim.co sales",
+				"confidence": "High",
+				"kind": "variant",
+				"past": 0,
+				"parts": []
+			}
+		},
+		{
+			"name": "sales the site isn't sure of leave an upgraded item to the clean price and its upgrades",
+			"known": {
+				"prices": {
+					"glacial_scythe": {
+						"bazaar": -1,
+						"auction": -1,
+						"sales": 6,
+						"days": 7,
+						"clean": 8000000000,
+						"thin": -1,
+						"listed": -1,
+						"at": 1793516400000,
+						"by": "a"
+					},
+					"hot_potato_book": {
+						"bazaar": 5000000,
+						"auction": -1,
+						"sales": 0,
+						"days": 7,
+						"clean": -1,
+						"thin": -1,
+						"listed": -1,
+						"at": 1793516400000,
+						"by": "a"
+					},
+					"recombobulator_3000": {
+						"bazaar": 100000000,
+						"auction": -1,
+						"sales": 0,
+						"days": 7,
+						"clean": -1,
+						"thin": -1,
+						"listed": -1,
+						"at": 1793516400000,
+						"by": "a"
+					}
+				}
+			},
+			"row": {
+				"item": {
+					"entry": "glacial_scythe",
+					"item_modifiers": {
+						"hot_potato_books": 10,
+						"recombobulated": true
+					},
+					"extra": {},
+					"item_data": {}
+				},
+				"quantity": 1,
+				"valuation": {
+					"price": 20000000000,
+					"source": "AH matched sold median",
+					"confidence": "Medium",
+					"samples": 5
+				}
+			},
+			"expect": {
+				"unit": 8112900000,
+				"total": 8112900000,
+				"source": "6 sales",
+				"confidence": "Medium",
+				"kind": "rebuild",
+				"past": 0,
+				"parts": [
+					{
+						"kind": "hot_potato_books",
+						"value": 26800000
+					},
+					{
+						"kind": "recombobulator",
+						"value": 86100000
+					}
+				]
+			}
+		},
+		{
+			"name": "a pet's level-matched sales price it from three, however sure the site is",
+			"known": {
+				"prices": {
+					"wolf_pet_legendary": {
+						"bazaar": -1,
+						"auction": -1,
+						"sales": 9,
+						"days": 7,
+						"clean": 20000000,
+						"thin": -1,
+						"listed": -1,
+						"at": 1793516400000,
+						"by": "a"
+					}
+				}
+			},
+			"row": {
+				"item": {
+					"entry": "wolf_pet_legendary",
+					"item_modifiers": {},
+					"extra": {
+						"pet_data": {
+							"type": "WOLF",
+							"rarity": "LEGENDARY"
+						}
+					},
+					"item_data": {
+						"item_type": "PET",
+						"rarity": "LEGENDARY"
+					}
+				},
+				"quantity": 1,
+				"valuation": {
+					"price": 65000000,
+					"source": "AH matched sold median",
+					"confidence": "Medium",
+					"samples": 4
+				}
+			},
+			"expect": {
+				"unit": 65000000,
+				"total": 65000000,
+				"source": "dragsim.co sales",
+				"confidence": "Medium",
+				"kind": "variant",
+				"past": 0,
+				"parts": []
+			}
+		},
+		{
+			"name": "a pet with two matched sales is priced by Lazarus",
+			"known": {
+				"prices": {
+					"wolf_pet_legendary": {
+						"bazaar": -1,
+						"auction": -1,
+						"sales": 9,
+						"days": 7,
+						"clean": 20000000,
+						"thin": -1,
+						"listed": -1,
+						"at": 1793516400000,
+						"by": "a"
+					}
+				}
+			},
+			"row": {
+				"item": {
+					"entry": "wolf_pet_legendary",
+					"item_modifiers": {},
+					"extra": {
+						"pet_data": {
+							"type": "WOLF",
+							"rarity": "LEGENDARY"
+						}
+					},
+					"item_data": {
+						"item_type": "PET",
+						"rarity": "LEGENDARY"
+					}
+				},
+				"quantity": 1,
+				"valuation": {
+					"price": 65000000,
+					"source": "AH matched sold median",
+					"confidence": "Low",
+					"samples": 2
+				}
+			},
+			"expect": {
+				"unit": 20000000,
+				"total": 20000000,
+				"source": "9 sales",
+				"confidence": "High",
+				"kind": "rebuild",
+				"past": 0,
+				"parts": []
+			}
+		},
+		{
+			"name": "the cheapest listing of the exact item prices it, never the owner's own",
+			"known": {
+				"prices": {
+					"emerald_blade": {
+						"bazaar": -1,
+						"auction": -1,
+						"sales": 4,
+						"days": 7,
+						"clean": 100000000,
+						"thin": -1,
+						"listed": -1,
+						"at": 1793516400000,
+						"by": "a"
+					}
+				},
+				"listings": {
+					"emerald_blade": [
+						{
+							"price": 300000000,
+							"seller": "Owner",
+							"item": {
+								"entry": "emerald_blade",
+								"item_modifiers": {
+									"hot_potato_books": 15
+								},
+								"extra": {},
+								"item_data": {}
+							}
+						},
+						{
+							"price": 600000000,
+							"seller": "Riot1x",
+							"item": {
+								"entry": "emerald_blade",
+								"item_modifiers": {
+									"hot_potato_books": 15
+								},
+								"extra": {},
+								"item_data": {}
+							}
+						},
+						{
+							"price": 200000000,
+							"seller": "Cheap",
+							"item": {
+								"entry": "emerald_blade",
+								"item_modifiers": {
+									"hot_potato_books": 5
+								},
+								"extra": {},
+								"item_data": {}
+							}
+						}
+					]
+				}
+			},
+			"item": {
+				"entry": "emerald_blade",
+				"item_modifiers": {
+					"hot_potato_books": 15
+				},
+				"extra": {},
+				"item_data": {}
+			},
+			"owner": "owner",
+			"expect": {
+				"unit": 600000000,
+				"total": 600000000,
+				"source": "listed",
+				"confidence": "Medium",
+				"kind": "variant",
+				"past": 0,
+				"parts": []
+			}
+		},
+		{
+			"name": "on an item worth only what an NPC pays, books add nothing but a skin still does",
+			"known": {
+				"items": {
+					"lame_helmet": [
+						"Lame Helmet",
+						"RARE",
+						1000000
+					]
+				},
+				"prices": {
+					"hot_potato_book": {
+						"bazaar": 5000000,
+						"auction": -1,
+						"sales": 0,
+						"days": 7,
+						"clean": -1,
+						"thin": -1,
+						"listed": -1,
+						"at": 1793516400000,
+						"by": "a"
+					},
+					"lame_skin": {
+						"bazaar": -1,
+						"auction": -1,
+						"sales": 3,
+						"days": 7,
+						"clean": 40000000,
+						"thin": -1,
+						"listed": -1,
+						"at": 1793516400000,
+						"by": "a"
+					}
+				}
+			},
+			"item": {
+				"entry": "lame_helmet",
+				"item_modifiers": {
+					"hot_potato_books": 10
+				},
+				"extra": {
+					"item_skin": {
+						"skinId": "lame_skin"
+					}
+				},
+				"item_data": {}
+			},
+			"expect": {
+				"unit": 21000000,
+				"total": 21000000,
+				"source": "NPC",
+				"confidence": "Floor",
+				"kind": "rebuild",
+				"past": 0,
+				"parts": [
+					{
+						"kind": "hot_potato_books",
+						"value": 0
+					},
+					{
+						"kind": "item_skin",
+						"value": 20000000
+					}
+				]
+			}
+		},
+		{
+			"name": "an item nothing prices is the NPC floor dragsim.co gives",
+			"known": {},
+			"row": {
+				"item": {
+					"entry": "null_ovoid_mystery",
+					"item_modifiers": {},
+					"extra": {},
+					"item_data": {}
+				},
+				"quantity": 1,
+				"valuation": {
+					"price": 1000000,
+					"source": "NPC sell floor",
+					"confidence": "Floor",
+					"samples": 0
+				}
+			},
+			"expect": {
+				"unit": 1000000,
+				"total": 1000000,
+				"source": "NPC",
+				"confidence": "Floor",
+				"kind": "floor",
+				"past": 0,
+				"parts": []
+			}
+		},
+		{
+			"name": "an item nothing prices is the gem cost dragsim.co gives",
+			"known": {},
+			"row": {
+				"item": {
+					"entry": "gem_thing",
+					"item_modifiers": {},
+					"extra": {},
+					"item_data": {}
+				},
+				"quantity": 1,
+				"valuation": {
+					"price": 3000000,
+					"source": "Gem cost conversion estimate",
+					"confidence": "Low",
+					"samples": 0
+				}
+			},
+			"expect": {
+				"unit": 3000000,
+				"total": 3000000,
+				"source": "gem cost",
+				"confidence": "Floor",
+				"kind": "floor",
+				"past": 0,
+				"parts": []
+			}
+		},
+		{
+			"name": "an item nothing prices is what an NPC pays for it by the item itself",
+			"known": {},
+			"row": {
+				"item": {
+					"entry": "odd_thing",
+					"item_modifiers": {},
+					"extra": {},
+					"item_data": {
+						"npc_sell_price": 450000
+					}
+				},
+				"quantity": 1,
+				"valuation": null
+			},
+			"expect": {
+				"unit": 450000,
+				"total": 450000,
+				"source": "NPC",
+				"confidence": "Floor",
+				"kind": "floor",
+				"past": 0,
+				"parts": []
+			}
+		},
+		{
+			"name": "a pet's NPC price by its rarity",
+			"known": {
+				"pets": {
+					"warden": "Warden"
+				},
+				"petNpc": {
+					"warden": {
+						"legendary": 150000000
+					}
+				}
+			},
+			"item": {
+				"entry": "warden_pet_legendary",
+				"item_modifiers": {},
+				"extra": {
+					"pet_data": {
+						"type": "WARDEN",
+						"rarity": "LEGENDARY"
+					}
+				},
+				"item_data": {}
+			},
+			"expect": {
+				"unit": 150000000,
+				"total": 150000000,
+				"source": "NPC",
+				"confidence": "Floor",
+				"kind": "rebuild",
+				"past": 0,
+				"parts": []
+			}
+		},
+		{
+			"name": "a bazaar stack past what the buy orders take is less sure",
+			"known": {
+				"prices": {
+					"enchanted_diamond": {
+						"bazaar": 5000000,
+						"auction": -1,
+						"sales": 0,
+						"days": 7,
+						"clean": -1,
+						"thin": -1,
+						"listed": -1,
+						"at": 1793516400000,
+						"by": "a"
+					}
+				}
+			},
+			"row": {
+				"item": {
+					"entry": "enchanted_diamond",
+					"item_modifiers": {},
+					"extra": {},
+					"item_data": {}
+				},
+				"quantity": 1280,
+				"valuation": {
+					"price": 4000000,
+					"source": "Bazaar historical bid median",
+					"confidence": "High",
+					"samples": 10
+				},
+				"bazaar_depth": {
+					"filled": 400,
+					"unfilled": 880,
+					"proceeds": 1600000000
+				}
+			},
+			"expect": {
+				"unit": 5000000,
+				"total": 6400000000,
+				"source": "bazaar",
+				"confidence": "Low",
+				"kind": "rebuild",
+				"past": 880,
+				"parts": []
+			}
+		},
+		{
+			"name": "no upgrade counts for more than its own price, and an unfitted one for half",
+			"known": {
+				"shares": {
+					"golden_hot_potato_books": 1.13
+				},
+				"prices": {
+					"hyperion": {
+						"bazaar": -1,
+						"auction": -1,
+						"sales": 5,
+						"days": 7,
+						"clean": 1000000000,
+						"thin": -1,
+						"listed": -1,
+						"at": 1793516400000,
+						"by": "a"
+					},
+					"golden_hot_potato_book": {
+						"bazaar": 100000000,
+						"auction": -1,
+						"sales": 0,
+						"days": 7,
+						"clean": -1,
+						"thin": -1,
+						"listed": -1,
+						"at": 1793516400000,
+						"by": "a"
+					},
+					"pure_black_dye": {
+						"bazaar": -1,
+						"auction": -1,
+						"sales": 3,
+						"days": 7,
+						"clean": 200000000,
+						"thin": -1,
+						"listed": -1,
+						"at": 1793516400000,
+						"by": "a"
+					}
+				}
+			},
+			"item": {
+				"entry": "hyperion",
+				"item_modifiers": {
+					"golden_hot_potato_books": 2
+				},
+				"extra": {
+					"item_dye": {
+						"dyeId": "pure_black_dye"
+					}
+				},
+				"item_data": {}
+			},
+			"expect": {
+				"unit": 1300000000,
+				"total": 1300000000,
+				"source": "5 sales",
+				"confidence": "Medium",
+				"kind": "rebuild",
+				"past": 0,
+				"parts": [
+					{
+						"kind": "golden_hot_potato_books",
+						"value": 200000000
+					},
+					{
+						"kind": "dye",
+						"value": 100000000
+					}
+				]
+			}
+		},
+		{
+			"name": "a dungeon item's stars are the more of its two records",
+			"known": {
+				"shares": {
+					"stars": 0.4
+				},
+				"prices": {
+					"giants_sword": {
+						"bazaar": -1,
+						"auction": -1,
+						"sales": 5,
+						"days": 7,
+						"clean": 8000000000,
+						"thin": -1,
+						"listed": -1,
+						"at": 1793516400000,
+						"by": "a"
+					},
+					"ritual_residue": {
+						"bazaar": 25000000,
+						"auction": -1,
+						"sales": 0,
+						"days": 7,
+						"clean": -1,
+						"thin": -1,
+						"listed": -1,
+						"at": 1793516400000,
+						"by": "a"
+					}
+				}
+			},
+			"item": {
+				"entry": "giants_sword",
+				"item_modifiers": {
+					"star_level": 3
+				},
+				"extra": {
+					"dungeon_upgrade": {
+						"stars": 5
+					}
+				},
+				"item_data": {}
+			},
+			"expect": {
+				"unit": 8150000000,
+				"total": 8150000000,
+				"source": "5 sales",
+				"confidence": "Medium",
+				"kind": "rebuild",
+				"past": 0,
+				"parts": [
+					{
+						"kind": "stars",
+						"value": 150000000
+					}
+				]
+			}
+		},
+		{
+			"name": "final synchronizers show unpriced until something prices them",
+			"known": {
+				"prices": {
+					"aspect_of_the_void": {
+						"bazaar": -1,
+						"auction": -1,
+						"sales": 5,
+						"days": 7,
+						"clean": 5000000,
+						"thin": -1,
+						"listed": -1,
+						"at": 1793516400000,
+						"by": "a"
+					}
+				}
+			},
+			"item": {
+				"entry": "aspect_of_the_void",
+				"item_modifiers": {
+					"final_synchronizers": 3
+				},
+				"extra": {},
+				"item_data": {}
+			},
+			"expect": {
+				"unit": 5000000,
+				"total": 5000000,
+				"source": "5 sales",
+				"confidence": "High",
+				"kind": "rebuild",
+				"past": 0,
+				"parts": [
+					{
+						"kind": "final_synchronizers",
+						"value": -1
+					}
+				]
+			}
+		},
+		{
+			"name": "a pet is priced by its name, as the market knows it",
+			"known": {
+				"items": {
+					"ender_dragon_pet_legendary": [
+						"Ender Dragon",
+						"LEGENDARY",
+						-1
+					]
+				},
+				"pets": {
+					"enderdragon": "Ender Dragon"
+				},
+				"prices": {
+					"ender_dragon_pet_legendary": {
+						"bazaar": -1,
+						"auction": -1,
+						"sales": 5,
+						"days": 7,
+						"clean": 900000000,
+						"thin": -1,
+						"listed": -1,
+						"at": 1793516400000,
+						"by": "a"
+					}
+				}
+			},
+			"item": {
+				"entry": "enderdragon_pet_legendary",
+				"item_modifiers": {},
+				"extra": {
+					"pet_data": {
+						"type": "ENDERDRAGON",
+						"rarity": "LEGENDARY"
+					}
+				},
+				"item_data": {}
+			},
+			"expect": {
+				"unit": 900000000,
+				"total": 900000000,
+				"source": "5 sales",
+				"confidence": "High",
+				"kind": "rebuild",
+				"past": 0,
+				"parts": []
+			}
+		},
+		{
+			"name": "the site's clean price lends to items Lazarus has nothing better for",
+			"known": {
+				"siteBase": {
+					"terminator": 3000000000
+				}
+			},
+			"item": {
+				"entry": "terminator",
+				"item_modifiers": {},
+				"extra": {},
+				"item_data": {}
+			},
+			"expect": {
+				"unit": 3000000000,
+				"total": 3000000000,
+				"source": "dragsim.co",
+				"confidence": "Medium",
+				"kind": "rebuild",
+				"past": 0,
+				"parts": []
+			}
+		},
+		{
+			"name": "one or two sales, capped by the cheapest listing",
+			"known": {
+				"prices": {
+					"terminator": {
+						"bazaar": -1,
+						"auction": -1,
+						"sales": 1,
+						"days": 7,
+						"clean": -1,
+						"thin": 4000000000,
+						"listed": 3000000000,
+						"at": 1793516400000,
+						"by": "a"
+					}
+				}
+			},
+			"item": {
+				"entry": "terminator",
+				"item_modifiers": {},
+				"extra": {},
+				"item_data": {}
+			},
+			"expect": {
+				"unit": 3000000000,
+				"total": 3000000000,
+				"source": "listed",
+				"confidence": "Medium",
+				"kind": "rebuild",
+				"past": 0,
+				"parts": []
+			}
+		},
+		{
+			"name": "the fire sale prices an item no one has sold",
+			"known": {
+				"gemCoins": 2000000,
+				"firesale": {
+					"lucky_clover": {
+						"gems": 1000,
+						"buyers": 3
+					}
+				}
+			},
+			"item": {
+				"entry": "lucky_clover",
+				"item_modifiers": {},
+				"extra": {},
+				"item_data": {}
+			},
+			"expect": {
+				"unit": 2000000000,
+				"total": 2000000000,
+				"source": "fire sale",
+				"confidence": "Low",
+				"kind": "rebuild",
+				"past": 0,
+				"parts": []
+			}
+		},
+		{
+			"name": "nothing prices it",
+			"known": {},
+			"item": {
+				"entry": "mystery_thing",
+				"item_modifiers": {},
+				"extra": {},
+				"item_data": {}
+			},
+			"expect": {
+				"unit": -1,
+				"total": -1,
+				"source": "",
+				"confidence": null,
+				"kind": "",
+				"past": 0,
+				"parts": []
+			}
+		}
+	]
+}

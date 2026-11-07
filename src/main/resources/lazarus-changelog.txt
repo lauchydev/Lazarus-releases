@@ -1,0 +1,4 @@
+# What's new in this version, shown by /lazarus changelog. One line per change, "Feature: one sentence".
+# Lines starting with "+" are new, "*" improved, "-" fixed; the command groups them in that order.
++ Staff Desk: One screen for staff to moderate whoever is online: the flagged first, each player's dossier, and every staff command as a button.
++ Anticheat Lines: The anticheat's lines leave staff chat and become flags on the staff desk, shared with every staff member.

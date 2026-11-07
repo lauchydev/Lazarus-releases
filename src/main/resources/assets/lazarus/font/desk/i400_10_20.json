@@ -1,0 +1,6 @@
+{
+	"providers": [
+		{"type": "ttf", "file": "lazarus:desk/inter-400.ttf", "size": 20, "oversample": 1.0, "shift": [0, 0]},
+		{"type": "reference", "id": "minecraft:default"}
+	]
+}
