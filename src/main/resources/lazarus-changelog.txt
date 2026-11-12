@@ -1,0 +1,16 @@
+# What's new in this version, shown by /lazarus changelog. One line per change, "Feature: one sentence".
+# Lines starting with "+" are new, "*" improved, "-" fixed; the command groups them in that order.
++ Score Alert: A title, a sound and a chat line when your dungeon run reaches 300 score.
++ Price Paid: Items you bought at auction show what you paid while Shift is held.
++ Lazarus+: A card in the corner when Lazarus+ arrives, like an advancement.
++ Lazarus+: Fixed some Lazarus+ features.
+* Chat: Messages read "Lazarus > ..." in the game's own colours, with the name in purple.
+* Dungeons and the End: Solver, terminal, Golden Dragon and tracker lines use a short "LZ >" (or "LZ+ >").
+* Join Messages: A member's join reads "> Name message".
+* Lazarus+: A new welcome message.
+- Lights: The six levers that count are boxed.
+- Terminal Highlight: Terminals still to do are boxed.
+- Dungeon Map: Teammates too far away to see keep moving on the map.
+- Chest Roll: The strip shows only what that chest can hold, drawn as the real items, and never essence.
+- Chest Profit: The reroll feather isn't counted as a reward.
+- Rich Presence: The "Get Lazarus" button opens the right Discord invite.
