@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "id": "lazarus-gametest",
+  "version": "1.0.0",
+  "name": "Lazarus game tests",
+  "environment": "client",
+  "entrypoints": {
+    "fabric-client-gametest": ["dev.lauchy.lazarus.gametest.LazarusClientTest"]
+  },
+  "depends": {
+    "lazarus": "*"
+  }
+}

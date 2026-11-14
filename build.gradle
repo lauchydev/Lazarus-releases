@@ -1,0 +1,91 @@
+plugins {
+	id 'net.fabricmc.fabric-loom' version "${loom_version}"
+}
+
+// mod_version is major.minor.hotfix, bumped by hand: minor for a batch of features, hotfix
+// for fixes. CI passes -Pbuild_number=<run number>, which orders releases for the updater.
+// Local builds are 0, which every published build counts as newer than.
+def buildNumber = (project.findProperty("build_number") ?: "0").toString()
+
+version = project.mod_version
+group = project.maven_group
+
+base {
+	archivesName = project.archives_base_name
+}
+
+repositories {
+	mavenCentral()
+	maven { url = "https://repo.nea.moe/releases" } // libautoupdate
+}
+
+loom {
+	accessWidenerPath = file("src/main/resources/lazarus.accesswidener")
+	// Dev sessions open at 1080p, the size screens are checked at (the staff desk draws one to one there).
+	runs {
+		client {
+			programArgs "--width", "1920", "--height", "1080"
+		}
+	}
+}
+
+dependencies {
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+
+	// /lazarus update. Minecraft already ships Gson, so only the library itself goes in the jar.
+	implementation("moe.nea:libautoupdate:${project.libautoupdate_version}") { exclude group: "com.google.code.gson" }
+	include("moe.nea:libautoupdate:${project.libautoupdate_version}") { transitive = false }
+
+	testImplementation platform("org.junit:junit-bom:5.13.4")
+	testImplementation "org.junit.jupiter:junit-jupiter"
+	testRuntimeOnly "org.junit.platform:junit-platform-launcher"
+}
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(25)
+	}
+}
+
+tasks.withType(JavaCompile).configureEach {
+	options.release = 25
+	options.encoding = "UTF-8"
+	// Published builds (CI passes a build number) are compiled with no debug info: no line
+	// numbers, local-variable names or source-file names, so a decompile of the released jar
+	// is far harder to read. Dev builds (number 0) keep it so crashes stay debuggable.
+	if (buildNumber != "0") {
+		options.debug = false
+	}
+}
+
+processResources {
+	inputs.property "version", project.version
+	inputs.property "build", buildNumber
+	filesMatching("fabric.mod.json") {
+		expand "version": project.version, "build": buildNumber
+	}
+}
+
+test {
+	useJUnitPlatform()
+}
+
+jar {
+	from("LICENSE") {
+		rename { "${it}_${project.archives_base_name}" }
+	}
+}
+
+// Client game tests boot the real game headless in CI: every mixin applies, a world
+// loads, and each Lazarus screen renders once, so a broken hook fails the build here.
+fabricApi {
+	configureTests {
+		createSourceSet = true
+		modId = "lazarus-gametest"
+		enableGameTests = false
+		enableClientGameTests = true
+		eula = true
+	}
+}
